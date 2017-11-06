@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { inject, observer } from 'mobx-react';
 
 import Input from '../components/reusables/input';
 import Button from '../components/reusables/button';
+
+const bidderStore = inject('bidder');
 
 export default class Home extends Component {
 	constructor() {
@@ -23,14 +26,17 @@ export default class Home extends Component {
 
 	onEnter(event) {
 		if (event.keyCode === 13) {
-			console.log(this.state);
+			// console.log(this.state);
+			document.getElementById('user').innerHTML = 'Welcome, ' + this.state.user;
+			console.log(this)
 		}
+
 	}
 	render() {
 		return (
 			<div>
 				<Input label='Name' handler={this.setUser} value={this.state.user} onKeyDown={this.onEnter} placeholder='Username' />
-				
+				<p id="user"></p>
 			</div>
 			)
 	}
