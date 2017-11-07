@@ -5,7 +5,7 @@ import { inject, observer } from 'mobx-react';
 import Input from '../components/reusables/input';
 import Button from '../components/reusables/button';
 
-const bidderStore = inject('bidder');
+// const bidderStore = inject('bidder');
 
 export default class Home extends Component {
 	constructor() {
@@ -33,6 +33,12 @@ export default class Home extends Component {
 
 	}
 	render() {
+		const UserNameDisplayer = inject(
+    stores => ({
+        name: stores.bidderStore
+    })
+	)
+		console.log(UserNameDisplayer)
 		return (
 			<div>
 				<Input label='Name' handler={this.setUser} value={this.state.user} onKeyDown={this.onEnter} placeholder='Username' />
