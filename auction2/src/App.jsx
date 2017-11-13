@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 
-import Home from './pages/home';
+import Layout from './components/Layout';
 
 @inject('bidder')
 export default class App extends Component {
@@ -23,7 +23,7 @@ export default class App extends Component {
   render() {
 
     return (
-      <Home name={this.checkUser.bind(this)} />
+      <Layout />
     );
   }
 }

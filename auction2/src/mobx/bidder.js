@@ -6,6 +6,7 @@ class bidderStore {
 	@action getUser(user) {
 		this.currentUser = user;
 		console.log(this.currentUser);
+		localStorage.setItem('user', this.currentUser);
 	}
 }
 
