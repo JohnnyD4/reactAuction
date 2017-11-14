@@ -17,18 +17,50 @@ export default class Menu extends Component {
 		const style = StyleSheet.create({
 			menu: {
 				backgroundColor: '#222fff',
-				height: '300px',
-				margin: '-30px',
-				padding: '40px'
+				height: '160px',
+				// margin: '-30px',
+				padding: '40px',
+				position: 'relative',
 			},
 			user: {
 				color: 'white'
+			},
+			userDiv: {
+				// border: '2px solid',
+				float: 'left',
+				minWidth: '120px',
+				position: 'absolute',
+				bottom: '10px',
+				left: '80px'
+			},
+			prodDiv: {
+				// border: '2px solid',
+				position: 'absolute',
+				top: '20%',
+				left: '44%',
+			},
+			highBid: {
+				// border: '2px solid',
+				position: 'absolute',
+				bottom: '10px',
+				right: '80px',
 			}
+
 		})
 
 		return (
 			<div className={css(style.menu)}>
-			<h1 className={css(style.user)}>{this.props.bidder.currentUser}sdf</h1>
+				<div className={css(style.userDiv)}>
+					<h2 className={css(style.user)}>{this.props.user}</h2>
+				</div>
+				<div className={css(style.prodDiv)}>
+					<h1 className={css(style.user)}>{this.props.product}</h1>
+					<p>{this.props.description}</p>
+				</div>
+
+				<div className={css(style.highBid)}>
+				<h2 className={css(style.user)}>Highest Bid: ${this.props.highBid}</h2>
+				</div>
 			</div>
 			)
 	}

@@ -28,7 +28,7 @@ export default class Home extends Component {
 			// console.log(this.state);
 			document.getElementById('user').innerHTML = 'Welcome, ' + this.state.user;
 			this.props.bidder.getUser(this.state.user);
-			this.props.history.push('/bids');
+			this.props.history.push('/bids/2');
 		}
 
 	}

@@ -14,7 +14,7 @@ export default class Layout extends Component {
 			<HashRouter>
 				<Switch>
 					<Route exact path='/' component={Home} />
-					<Route exact path='/bids' component={Bids} />
+					<Route path='/bids/:prodId' component={Bids} />
 				</Switch>	
 			</HashRouter>
 			)

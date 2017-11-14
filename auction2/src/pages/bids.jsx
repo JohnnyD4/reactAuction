@@ -13,10 +13,23 @@ export default class Bids extends Component {
 
 	}
 
+	componentWillMount() {
+		console.log(this.props.match.params.prodId);
+		this.props.bids.getBid(this.props.match.params.prodId);
+		console.log(this.props);
+	}
+
+	goBack() {
+		this.props.history.goBack();
+	}
+
 	render() {
-		// console.log(this);
+		
 		return (
-			<Menu />
+			<div>
+				<Menu user={this.props.bidder.currentUser} highBid={this.props.bids.highBid} product={this.props.bids.prodName} description={this.props.bids.description} />
+				<Button onClick={this.goBack.bind(this)} BtnName='Back' />
+			</div>
 			// <h1>{this.props.bidder.currentUser}</h1>
 			)
 	}
