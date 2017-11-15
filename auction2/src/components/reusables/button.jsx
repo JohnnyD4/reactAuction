@@ -20,22 +20,41 @@ export default class Button extends Component {
 
 	}
 	render() {
-		const style = StyleSheet.create({
-			btn: {
-				cursor: 'pointer',
-				marginTop: '40px',
-				backgroundColor: 'grey',
-				padding: '5px 10px',
-				width: '100px',
-				borderRadius: '10%'
-			}
-		})
+		let style;
+		if (this.props.reason === 'bid') {
+			style = StyleSheet.create({
+				btn: {
+					cursor: 'pointer',
+					marginTop: '40px',
+					backgroundColor: 'green',
+					width: '150px',
+					height: '150px',
+					padding: '20px',
+					textAlign: 'center',
+				}
+			})
+
+		} else {
+			style = StyleSheet.create({
+				btn: {
+					cursor: 'pointer',
+					marginTop: '40px',
+					backgroundColor: 'grey',
+					padding: '5px 10px',
+					width: '100px',
+					borderRadius: '10%'
+				}
+			})
+		}
+		
+		
 
 		return (
 			<div
 				role='button'
 				onClick={this.props.onClick}
 				className={css(style.btn)}
+				reason={this.props.reason}
 			>
 			{this.props.BtnName}	
 			</div>

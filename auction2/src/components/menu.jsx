@@ -34,10 +34,10 @@ export default class Menu extends Component {
 				left: '80px'
 			},
 			prodDiv: {
-				// border: '2px solid',
-				position: 'absolute',
-				top: '20%',
-				left: '44%',
+				position: 'relative',
+				width: '300px',
+				margin: '0 auto',
+				
 			},
 			highBid: {
 				// border: '2px solid',

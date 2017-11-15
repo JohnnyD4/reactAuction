@@ -23,6 +23,9 @@ class bidsStore {
 	@observable startBid = null;
 	@observable highBid = null;
 	@observable description = null;
+	@observable bids = null;
+
+	
 
 	@action getBid(prodId) {
 		// console.log(prodId);
@@ -36,6 +39,12 @@ class bidsStore {
 				
 			}
 		}
+	}
+
+	@action getAllBids(df) {
+
+			this.bids = dummyData;
+		
 	}
 }
 
