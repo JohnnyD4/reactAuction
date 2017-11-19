@@ -74,7 +74,7 @@ class bidsStore {
 		// console.log(prodId);
 		for (let i = 0; i < dummyData.length; i += 1) {
 			if (dummyData[i].prodId == prodId) {
-				this.prodId = prodId;
+				this.prodId = Number(prodId);
 				this.prodName = dummyData[i].prodName;
 				this.startBid = Number(dummyData[i].startBid).toFixed(2);
 				this.highBid = Number(dummyData[i].highBid).toFixed(2);
@@ -93,7 +93,7 @@ class bidsStore {
 	@action postBid(newBid) {
 		if (newBid > this.highBid) {
 			this.highBid = newBid.toFixed(2);
-			alert('Congratulations you are now the highest bidder!');
+			// alert('Congratulations you are now the highest bidder!');
 		} else {
 			console.log('error');
 		}

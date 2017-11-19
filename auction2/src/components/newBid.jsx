@@ -38,10 +38,11 @@ export default class newBid extends Component {
 				width: '20%',
 				height: '300px',
 				position: 'absolute',
-				top: '300px',
+				top: '240px',
 				right: '20px',
 				border: '1px solid',
-				padding: '10px'
+				padding: '10px',
+				margin: '8px auto',
 			}
 
 		})

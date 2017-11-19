@@ -17,13 +17,13 @@ export default class Menu extends Component {
 		const style = StyleSheet.create({
 			menu: {
 				backgroundColor: '#222fff',
-				height: '160px',
-				// margin: '-30px',
+				height: '100px',
 				padding: '40px',
 				position: 'relative',
 			},
 			user: {
-				color: 'white'
+				color: 'white',
+				textAlign: 'center',
 			},
 			userDiv: {
 				// border: '2px solid',
@@ -37,7 +37,7 @@ export default class Menu extends Component {
 				position: 'relative',
 				width: '300px',
 				margin: '0 auto',
-				
+				bottom: '40px',
 			},
 			highBid: {
 				// border: '2px solid',

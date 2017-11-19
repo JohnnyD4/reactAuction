@@ -41,7 +41,7 @@ export default class Button extends Component {
 					cursor: 'pointer',
 					backgroundColor: 'white',
 					textAlign: 'center',
-					border: '1px solid black',
+					borderBottom: '1px solid lightGray',
 					padding: '10px'
 				}
 			})
@@ -50,11 +50,12 @@ export default class Button extends Component {
 			style = StyleSheet.create({
 				btn: {
 					cursor: 'pointer',
-					marginTop: '40px',
-					backgroundColor: 'grey',
+					margin: '20px',
+					backgroundColor: 'lightGray',
 					padding: '5px 10px',
-					width: '100px',
-					borderRadius: '10%'
+					minWidth: '100px',
+					borderRadius: '25px',
+					textAlign: 'center',
 				}
 			})
 		}

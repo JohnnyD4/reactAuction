@@ -20,7 +20,7 @@ export default class Bids extends Component {
 	}
 
 	goBack() {
-		this.props.history.goBack();
+		this.props.history.push('/');
 	}
 
 	renderBids() {
@@ -38,12 +38,17 @@ export default class Bids extends Component {
 	}
 
 	getProduct(id) {
-		console.log(id);
 		this.props.history.push(`/bids/${id}`);
 	}
 
 	render() {
 		
+		const style = StyleSheet.create({
+			btn: {
+				width: '200px'
+			}
+		})
+
 		return (
 			<div>
 				{/*<Menu 
@@ -52,12 +57,13 @@ export default class Bids extends Component {
 					product={this.props.bids.prodName}
 					description={this.props.bids.description}
 				/>*/}
-				<Button 
-					onClick={this.goBack.bind(this)}
-					BtnName='Back'
+				<div className={css(style.btn)}>
+					<Button 
+						onClick={this.goBack.bind(this)}
+						BtnName='Back to Home'
 
-				/>
-
+					/>
+				</div>
 				{this.renderBids()}
 			</div>
 			

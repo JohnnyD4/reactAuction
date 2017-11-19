@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'aphrodite/no-important';
 
 export default class Input extends Component {
 
@@ -19,11 +20,24 @@ export default class Input extends Component {
 
 	}
 	render() {
-		// console.log(this);
+		const style = StyleSheet.create({
+			input: {
+				height: '30px',
+				border: 'none',
+				borderBottom: '1px solid',
+				fontSize: '25px',
+				background: 'none',
+				':focus': {
+					outline: 'none',
+				}
+			}
+		})
+
 		return (
 			<div>
 				<p>{this.props.label}</p>
 				<input
+					className={css(style.input)}
 					type={this.state.type}
 					value={this.state.value}
 					onChange={this.props.handler}

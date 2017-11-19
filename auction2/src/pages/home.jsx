@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
+import { StyleSheet, css } from 'aphrodite/no-important';
 
 import Input from '../components/reusables/input';
 import Button from '../components/reusables/button';
@@ -33,18 +34,41 @@ export default class Home extends Component {
 
 	}
 	render() {
+		const style = StyleSheet.create({
+			body: {
+				overflow: 'hidden'
+			},
+			container: {
+				backgroundColor: 'lightBlue',
+			},
+			home: {
+				width: '200px',
+				margin: 'auto',
+				textAlign: 'center',
+				marginTop: '100px',
+				paddingBottom: '280px',
+			},
+			header: {
+				padding: '60px',
+				textAlign: 'center',
+				marginTop: '0px'
+			}
+		})
 		
 		return (
-			<div>
-				<Input
-					type= 'text'
-					label='Name'
-					handler={this.setUser}
-					value={this.state.user}
-					onKeyDown={this.onEnter}
-					placeholder='Username'
-				/>
-				<p id="user"></p>
+			<div className={css(style.container)}>
+			<h1 className={css(style.header)}>Welcome to the React Auction! Where the components react just as fast as you do!</h1>
+				<div className={css(style.home)}>
+					<Input
+						type= 'text'
+						handler={this.setUser}
+						value={this.state.user}
+						onKeyDown={this.onEnter}
+						placeholder='Username'
+						reason='home'
+					/>
+					<p id="user"></p>
+				</div>
 			</div>
 			)
 	}

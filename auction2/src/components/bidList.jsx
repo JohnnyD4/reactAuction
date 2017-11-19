@@ -21,8 +21,10 @@ export default class bidList extends Component {
 				BtnName={bids.prodName}
 				onClick={() => { this.getProduct(bids.prodId)}}
 				reason='list'
+				id={bids.prodId}
 			/>
-			))
+		))
+
 		return output;
 	}
 

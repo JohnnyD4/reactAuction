@@ -38,7 +38,7 @@ export default class BidPage extends Component {
 		return (
 			<div>
 				<Menu user={this.props.bidder.currentUser} highBid={this.props.bids.highBid} product={this.props.bids.prodName} description={this.props.bids.description} />
-				<Button onClick={this.goBack.bind(this)} BtnName='Back' />
+				<Button onClick={this.goBack.bind(this)} BtnName='View All Products' />
 				<BidList history={this.props.history} />
 				<BidHistory history={this.props.history} />
 				<NewBid history={this.props.history} />
