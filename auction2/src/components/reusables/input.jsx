@@ -13,7 +13,7 @@ export default class Input extends Component {
 		super(props);
 		this.state = {
 			value: props.initialValue,
-			type: 'text',
+			type: props.type,
 
 		}
 

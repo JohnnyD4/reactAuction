@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';	
 import { inject, observer } from 'mobx-react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 
@@ -13,6 +13,24 @@ export default class bidList extends Component {
 
 	}
 
+	renderBids() {
+		this.props.bids.getAllBids();
+		let allBids = this.props.bids.bids;
+		const output = allBids.map(bids => (
+			<Button
+				BtnName={bids.prodName}
+				onClick={() => { this.getProduct(bids.prodId)}}
+				reason='list'
+			/>
+			))
+		return output;
+	}
+
+	getProduct(id) {
+		this.props.bids.getBid(id);
+		this.props.history.push(`/bids/${id}`);
+	}
+
 	render() {
 		const style = StyleSheet.create({
 			container: {
@@ -24,8 +42,11 @@ export default class bidList extends Component {
 			}
 		})
 		return (
-			<div className={css(style.container)}>
-				bidList
+			<div
+				className={css(style.container)}
+			>
+				{this.renderBids()}
+
 			</div>
 			)
 	}

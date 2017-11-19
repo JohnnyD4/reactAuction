@@ -10,6 +10,25 @@ import Button from '../components/reusables/button';
 export default class newBid extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			newBid: '',
+		}
+
+		this.postBid = this.postBid.bind(this);
+	}
+
+	setNewBid(event) {
+		
+		this.setState({
+			newBid: event.target.value
+		})
+
+	}
+
+	postBid(val) {
+		this.props.bids.postBid(Number(val));
+		// this.props.bids.getBid(this.props.bids.prodId);
+		this.props.history.push(`/bids/${this.props.bids.prodId}`);
 
 	}
 
@@ -20,13 +39,28 @@ export default class newBid extends Component {
 				height: '300px',
 				position: 'absolute',
 				top: '300px',
-				right: '30px',
+				right: '20px',
 				border: '1px solid',
+				padding: '10px'
 			}
+
 		})
+
 		return (
 			<div className={css(style.container)}>
-				newBid
+
+				<Input
+					label='Bid on this product!'
+					type='number'
+					handler={this.setNewBid.bind(this)}
+					value={this.state.newBid}
+				/>
+
+				<Button
+					BtnName='Post Bid'
+					onClick={() => {this.postBid(this.state.newBid)}}
+				/>
+				{this.props.bids.error}
 			</div>
 			)
 	}

@@ -55,6 +55,7 @@ export default class Bids extends Component {
 				<Button 
 					onClick={this.goBack.bind(this)}
 					BtnName='Back'
+
 				/>
 
 				{this.renderBids()}

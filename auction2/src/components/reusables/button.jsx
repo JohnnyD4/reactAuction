@@ -25,12 +25,24 @@ export default class Button extends Component {
 			style = StyleSheet.create({
 				btn: {
 					cursor: 'pointer',
-					marginTop: '40px',
 					backgroundColor: 'green',
 					width: '150px',
 					height: '150px',
 					padding: '20px',
 					textAlign: 'center',
+					float: 'left',
+					margin: '30px 20px',
+				}
+			})
+
+		} else if (this.props.reason === 'list') {
+			style = StyleSheet.create({
+				btn: {
+					cursor: 'pointer',
+					backgroundColor: 'white',
+					textAlign: 'center',
+					border: '1px solid black',
+					padding: '10px'
 				}
 			})
 

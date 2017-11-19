@@ -36,7 +36,14 @@ export default class Home extends Component {
 		
 		return (
 			<div>
-				<Input label='Name' handler={this.setUser} value={this.state.user} onKeyDown={this.onEnter} placeholder='Username' />
+				<Input
+					type= 'text'
+					label='Name'
+					handler={this.setUser}
+					value={this.state.user}
+					onKeyDown={this.onEnter}
+					placeholder='Username'
+				/>
 				<p id="user"></p>
 			</div>
 			)

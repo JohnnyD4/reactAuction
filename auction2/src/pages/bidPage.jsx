@@ -16,14 +16,21 @@ export default class BidPage extends Component {
 
 	}
 
+	componentWillUpdate(nextProps, nextState) {
+		// let route = nextProps.match.url;
+		// this.props.history.push(`${this.props.history.location.pathname}`);
+		// console.log(nextProps);
+		// this.props.history.push()
+	}
+
 	componentWillMount() {
-		console.log(this.props.match.params.prodId);
+		// console.log(this.props.match.params.prodId);
 		this.props.bids.getBid(this.props.match.params.prodId);
-		console.log(this.props);
+		// console.log(this.props);
 	}
 
 	goBack() {
-		this.props.history.goBack();
+		this.props.history.push('/bids');
 	}
 
 	render() {
@@ -32,9 +39,9 @@ export default class BidPage extends Component {
 			<div>
 				<Menu user={this.props.bidder.currentUser} highBid={this.props.bids.highBid} product={this.props.bids.prodName} description={this.props.bids.description} />
 				<Button onClick={this.goBack.bind(this)} BtnName='Back' />
-				<BidList />
-				<BidHistory />
-				<NewBid />
+				<BidList history={this.props.history} />
+				<BidHistory history={this.props.history} />
+				<NewBid history={this.props.history} />
 			</div>
 
 			)
